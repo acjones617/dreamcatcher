@@ -1,10 +1,26 @@
 <div ng-controller="AuthC">
-  <h2>Login user</h2>
-  <form ng-submit="submit()" name="authorization">
-    email <input type="email" ng-model="cred.email"/>
-    password <input type="password" ng-model="cred.password"/>
-    <input type="submit" ng-hide="userControl.user" ng-click="userControl.signin()" value="sign in">
-    <input type="submit" ng-show="userControl.user" ng-click="userControl.logout()" value="logout">
-  </form>
-  {{userControl.user}}
+  <div ng-show="showLogin">
+    <h2>Login</h2>
+    <form ng-submit="userControl.login()" name="authorization">
+      email <input type="email" ng-model="cred.email"/>
+      password <input type="password" ng-model="cred.password"/>
+      <input type="submit" value="Log in">
+    </form>
+    <button ng-click="toggleLoginSignup()">Sign up!</button>
+  </div>
+  <div ng-show="showSignup">
+    <h2>Sign up</h2>
+    <form ng-submit="userControl.signup()" name="newUser">
+      <!-- username <input type="text" ng-model="settings.username" required> <br> -->
+      email <input type="email" ng-model="signup.email" required> <br>
+      password <input type="password" ng-model="signup.password" required> <br>
+      first name <input type="password" ng-model="signup.firstname" required> <br>
+      last name <input type="password" ng-model="signup.lastname" required> <br>
+      city of residence <input type="password" ng-model="signup.city" required> <br>
+      birthday <input type="date" ng-model="signup.birthday" required> <br>
+      What did you want to be when you grew up when you were 5? <input type="text" ng-model="signup.growup" required> <br>
+      <input type='submit' value='submit' ng-disabled="newUser.$invalid">
+    </form>
+    <button ng-click="toggleLoginSignup()">Login!</button>
+  </div>
 </div>
