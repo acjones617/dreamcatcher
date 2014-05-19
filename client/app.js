@@ -3,7 +3,9 @@ var app = angular.module('myApp', [
   'ngAnimate',
   'fx.animations',
   'firebase',
-  'myApp.home']);
+  'myApp.home',
+  'myApp.settings'
+  ]);
 // .config(function ($stateProvider) {
 //   $stateProvider
 //     .state('myApp', {
@@ -43,6 +45,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: 'browse',
       templateUrl: 'templates/browse.html'
     })
+    .state('root.settings', {
+      url: 'settings',
+      templateUrl: 'templates/settings.html'
+    })
 });
 
 // app.controller('HomeC', function($scope, myAuthService, $state, $rootScope) {
@@ -71,8 +77,7 @@ app.service('myAuthService', function($rootScope, $firebase, $state) {
 
 
 app.controller('RootC', function($scope, myAuthService, $state, $rootScope) {
-  $scope.user = 'AJ';
-  $rootScope.user = 'AJ';
+  
 });
 
 
