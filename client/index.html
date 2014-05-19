@@ -10,46 +10,26 @@
 </head>
 
   <body ng-app="myApp">
-  <div ng-controller="TestC">
-    <form ng-submit="submit()" name="testInput">
-      key <input type="text" ng-model="box.prop"/>
-      value <input type="text" ng-model="box.val"/>
-      <input type='submit' value='submit'>
-    </form>
-      <h1>{{ box.test }}</h1>
-      <h2>{{ trial }}</h2>
-      <h2>{{ box.prop }}</h2>
-      <h2>{{ box.val }}</h2>
-  </div>
+    
+    <!-- <a ui-sref="root">Enter</a>
+    <div ui-view></div> -->
+
+    <!-- <a ui-sref='home'>Home</a> -->
+
+    <div ui-view></div>
 <!-- 
-  <div ng-controller="SignupC">
-    <h2>Create user</h2>
-    <form ng-submit="submit()" name="authorization">
-      email <input type="email" ng-model="auth.email"/>
-      password <input type="password" ng-model="auth.password"/>
-      <input type="submit" value="submit">
-    </form>
-  </div>
- -->
-  <div ng-controller="LoginC">
-    <h2>Login user</h2>
-    <form ng-submit="submit()" name="authorization">
-      email <input type="email" ng-model="auth.email"/>
-      password <input type="password" ng-model="auth.password"/>
-      <input type="submit" value="submit">
-    </form>
-    <button ng-click="logout()" name="logout">Logout</button>
-  </div>
+    <div class="container">
+      <div class="login-box col-xs-12">
+        UI-VIEW TEST
 
-  UI-VIEW TEST
+        <div ui-view></div>
 
-  <div ui-view></div>
+        <a ui-sref="signup">Sign up</a>
+        <a ui-sref="login">Login</a>
+      </div>
+    </div>
+ -->  
 
-  <a ui-sref="signup">Sign up</a>
-  <a ui-sref="login">Login</a>
-  
-  
-    <!-- <div ui-view></div> -->
 
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
@@ -63,6 +43,7 @@
     <!-- Firebase Simple Login -->
     <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.4.1/firebase-simple-login.js'></script>
     <script src="app.js"></script>
+    <script src="scripts/home.js"></script>
     <script src="common/directives.js"></script>
     <script src="main/main.js"></script>
     <script src="note/note.js"></script>

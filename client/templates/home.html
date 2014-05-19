@@ -1,0 +1,12 @@
+<div ng-controller="HomeC">
+  You are home
+  <form ng-submit="submit()" name="newUser">
+    username <input type="text" ng-model="settings.username"> <br>
+    email <input type="email" ng-model="settings.email"> <br>
+    birthday <input type="date" ng-model="settings.birthday"> <br>
+    What did you want to be when you grew up when you were 5? <input type="text" ng-model="settings.growup"> <br>
+    <input type='submit' value='submit'>
+  </form>
+  {{settings}}
+  {{user}}
+</div>

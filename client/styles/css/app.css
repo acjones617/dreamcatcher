@@ -1,3 +1,10 @@
-#messages {
-  color: lightgrey
+body {
+  background-color: #E7E3E8;
+}
+
+.login-box {
+  background-color: #D4D4D4;
+  margin: 15% auto 0 auto;
+
+
 }
