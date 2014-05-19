@@ -8,20 +8,31 @@ app.controller('HomeC', function($scope, $state, $rootScope, $firebase) {
   // $rootScope.on('login', function() {
   //   $scope.user = user;
   // })
+
+  $scope.dream = {};
+  $scope.username = $rootScope.user || 'test';
   
   var refDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/dreams");
-  $scope.dream = {};
-  $scope.username = $rootScope.user;
+  var personalDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/personal/"+$scope.username);
+
   $scope.submit = function() {
     console.log('new dream');
     refDreams.push({
-      username: $scope.username,
+      username: $scope.username || 'test',
       text: $scope.dream.text,
-      font: $scope.dream.font,
-      background: $scope.dream.background ,
+      font: $scope.dream.font || 'griffy',
+      background: $scope.dream.background || 'floral',
       createdAt: new Date(),
       encouragements: 0
       });
+    personalDreams.push({
+      text: $scope.dream.text,
+      font: $scope.dream.font || 'griffy',
+      background: $scope.dream.background || 'floral',
+      createdAt: new Date(),
+      encouragements: 0
+    })
+    delete $scope.dream.text;
   };
 })
 
