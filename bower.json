@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "dependencies": {
     "bootstrap-css-only": "*",
-    "angular": "*" ,
+    "angular": "*",
     "angular-cookies": "*",
     "ng-Fx": "*",
-    "angular-ui-router": "*"
+    "angular-ui-router": "*",
+    "underscore": "~1.6.0"
   }
 }
-
