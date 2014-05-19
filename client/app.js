@@ -4,6 +4,9 @@ var app = angular.module('myApp', [
   'fx.animations',
   'firebase',
   'myApp.home',
+  'myApp.mydreams',
+  'myApp.inspirations',
+  'myApp.browse',
   'myApp.settings'
   ]);
 // .config(function ($stateProvider) {
