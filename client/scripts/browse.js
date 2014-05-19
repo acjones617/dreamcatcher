@@ -5,7 +5,7 @@ var browse = angular.module('myApp.browse', [
   'firebase']);
 
 browse.controller('BrowseC', function($scope, $state, $rootScope, $firebase) {  
-  $scope.username = $rootScope.user || 'test2';
+  $scope.username = $rootScope.user.username || 'test2';
   $scope.browseDreams = [];
   
   $scope.showDream = function() {
