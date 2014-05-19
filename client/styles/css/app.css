@@ -2,9 +2,12 @@ body {
   background-color: #E7E3E8;
 }
 
-.login-box {
+.auth-box {
   background-color: #D4D4D4;
-  margin: 15% auto 0 auto;
-
-
+  width: 700px;
+  height: auto;
+  margin: 20px auto;
+  padding: 30px;
+  border: solid black 3px;
+  border-radius: 4px;
 }
