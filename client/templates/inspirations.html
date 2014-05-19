@@ -1,3 +1,6 @@
 <div ng-controller="InspireC">
   You are in inspirations
+  <div ng-repeat="dream in popularDreams | orderBy:predicate | limitTo:4">
+    {{ dream }}
+  </div>
 </div>
