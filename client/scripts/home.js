@@ -9,24 +9,18 @@ app.controller('HomeC', function($scope, $state, $rootScope, $firebase) {
   //   $scope.user = user;
   // })
   
-  var refUsers = new Firebase("https://blazing-fire-3752.firebaseIO.com/users");
-  $scope.settings = {};
-
-  // var ref = new Firebase("https://blazing-fire-3752.firebaseIO.com/test");
-  // Automatically syncs everywhere in realtime
-
-  // var rootRef = new Firebase("https://blazing-fire-3752.firebaseIO.com");
-
-  var newUser = $firebase(refUsers);
-  console.log($scope.newUser);
+  var refDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/dreams");
+  $scope.dream = {};
+  $scope.username = $rootScope.user;
   $scope.submit = function() {
-    console.log('submission');
-    console.log(newUser);
-    refUsers.push({
-      username: $scope.settings.username, 
-      email: $scope.settings.email,
-      birthday: $scope.settings.birthday,
-      growup: $scope.settings.growup
+    console.log('new dream');
+    refDreams.push({
+      username: $scope.username,
+      text: $scope.dream.text,
+      font: $scope.dream.font,
+      background: $scope.dream.background ,
+      createdAt: new Date(),
+      encouragements: 0
       });
   };
 })
