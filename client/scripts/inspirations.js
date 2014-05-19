@@ -5,7 +5,7 @@ var inspirations = angular.module('myApp.inspirations', [
   'firebase']);
 
 inspirations.controller('InspireC', function($scope, $state, $rootScope, $firebase) {  
-  $scope.username = $rootScope.user || 'test2';
+  $scope.username = $rootScope.user.username || 'test2';
   $scope.popularDreams = [];
   var refDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/dreams");
   refDreams.on('value', function(snapshot) {

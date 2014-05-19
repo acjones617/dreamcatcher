@@ -10,7 +10,7 @@ app.controller('SettingsC', function($scope, $state, $rootScope, $firebase) {
   // })
   
   var refUsers = new Firebase("https://blazing-fire-3752.firebaseIO.com/users");
-  $scope.settings = {username: $rootScope.user};
+  $scope.settings = {username: $rootScope.user.username};
 
   // var ref = new Firebase("https://blazing-fire-3752.firebaseIO.com/test");
   // Automatically syncs everywhere in realtime
