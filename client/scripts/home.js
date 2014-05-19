@@ -10,7 +10,7 @@ app.controller('HomeC', function($scope, $state, $rootScope, $firebase) {
   // })
 
   $scope.dream = {};
-  $scope.username = $rootScope.user || 'test';
+  $scope.username = $rootScope.user.username || 'test';
   
   var refDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/dreams");
   var personalDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/personal/"+$scope.username);
