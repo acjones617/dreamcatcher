@@ -4,30 +4,32 @@ var home = angular.module('myApp.settings', [
   'fx.animations',
   'firebase']);
 
-app.controller('HomeC', function($scope, $state, $rootScope, $firebase) {
+app.controller('SettingsC', function($scope, $state, $rootScope, $firebase) {
   // $rootScope.on('login', function() {
   //   $scope.user = user;
   // })
   
   var refUsers = new Firebase("https://blazing-fire-3752.firebaseIO.com/users");
-  $scope.settings = {};
+  $scope.settings = {username: $rootScope.user};
 
   // var ref = new Firebase("https://blazing-fire-3752.firebaseIO.com/test");
   // Automatically syncs everywhere in realtime
 
   // var rootRef = new Firebase("https://blazing-fire-3752.firebaseIO.com");
 
-  var newUser = $firebase(refUsers);
-  console.log($scope.newUser);
   $scope.submit = function() {
-    console.log('submission');
-    console.log(newUser);
+    $rootScope.user = $scope.settings.username;
+    console.log('new user created', $rootScope.user)
     refUsers.push({
       username: $scope.settings.username, 
       email: $scope.settings.email,
       birthday: $scope.settings.birthday,
       growup: $scope.settings.growup
       });
+    delete $scope.settings.username;
+    delete $scope.settings.email;
+    delete $scope.settings.birthday;
+    delete $scope.settings.growup;
   };
 })
 
