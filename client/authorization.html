@@ -1,9 +1,0 @@
-<div ng-controller="AuthC">
-  <h2>Login user</h2>
-  <form ng-submit="submit()" name="authorization">
-    email <input type="email" ng-model="cred.email"/>
-    password <input type="password" ng-model="cred.password"/>
-    <input type="submit" ng-hide="userControl.user" ng-click="userControl.signin()" value="sign in">
-    <input type="submit" ng-show="userControl.user" ng-click="userControl.logout()" value="logout">
-  </form>
-</div>
