@@ -1,5 +1,5 @@
 <div ng-controller="BrowseC">
-  <div class="col-xs-offset-3 col-xs-6 dream-to-be" ng-class="[visibleDream.background, visibleDream.font]">
+  <div class="col-xs-offset-3 col-xs-6 dream-to-be" ng-class="[visibleDream.background, visibleDream.font]" ng-click="modalDream(visibleDream)">
     <p>{{ visibleDream.text }}</p>
   </div>
   <div class="col-xs-offset-4 col-xs-6">

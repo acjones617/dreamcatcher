@@ -2,9 +2,10 @@ var browse = angular.module('myApp.browse', [
   'ui.router',
   'ngAnimate',
   'fx.animations',
+  'myApp.services',
   'firebase']);
 
-browse.controller('BrowseC', function($scope, $state, $rootScope, $firebase) {  
+browse.controller('BrowseC', function($scope, $state, $rootScope, $firebase, modal) {  
   $scope.username = $rootScope.user.username || 'test2';
   $scope.browseDreams = [];
   
@@ -35,5 +36,6 @@ browse.controller('BrowseC', function($scope, $state, $rootScope, $firebase) {
     $scope.showDream();
   });
 
+  $scope.modalDream = modal.showModal;
 });
 
