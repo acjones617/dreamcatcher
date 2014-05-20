@@ -69,7 +69,7 @@ app.service('myAuthService', function($rootScope, $firebase, $state) {
       $rootScope.user = user;
       $rootScope.user.username = $rootScope.user.email.split("@")[0];
       console.log($rootScope.user);
-      $state.go('root');
+      $state.go('root.home');
     }
     else if (error) {
       $rootScope.$emit("loginError", error);
@@ -83,7 +83,11 @@ app.service('myAuthService', function($rootScope, $firebase, $state) {
 
 
 app.controller('RootC', function($scope, myAuthService, $state, $rootScope) {
-  
+  $scope.runInfinity = function() {
+    window.runInfinity('#footer');
+  }
+  // $scope.bg = {};
+  // $scope.bg.One = 'TESTESTTESTESTESTESTS'
 });
 
 app.controller('LogoutC', function($scope, $firebase, $rootScope, myAuthService, $state) {
@@ -96,7 +100,7 @@ app.controller('LogoutC', function($scope, $firebase, $rootScope, myAuthService,
 app.controller('AuthC', function($scope, $firebase, $rootScope, myAuthService, $state) {
   $scope.userControl = {}
   $scope.showLogin = false;
-  $scope.showSignup = true;
+  $scope.showSignup = true  ;
 
   $scope.toggleLoginSignup = function() {
     console.log('whats going on');
@@ -118,11 +122,6 @@ app.controller('AuthC', function($scope, $firebase, $rootScope, myAuthService, $
   var refUsers = new Firebase("https://blazing-fire-3752.firebaseIO.com/users");
   $scope.signup = {};
 
-  // $scope.submit = function() {
-  //   $rootScope.user = $scope.settings.username;
-  //   console.log('new user created', $rootScope.user)
-    
-  // };
   $scope.userControl.signup = function() {
     $scope.signup.username = $scope.signup.email.split('@')[0];
     $rootScope.user = $scope.signup.username;
@@ -148,11 +147,6 @@ app.controller('AuthC', function($scope, $firebase, $rootScope, myAuthService, $
 
   };
 
-
-
-  // $scope.userControl.logout = function() {
-  //   myAuthService.auth.logout();
-  // }
   // listen for user auth events
   $rootScope.$on("login", function(event, user) {
     // do login things
@@ -171,3 +165,15 @@ app.controller('AuthC', function($scope, $firebase, $rootScope, myAuthService, $
     console.log('logged out');
   })
 });
+
+
+// app.directive('backgroundLink', function() {
+//   return {
+//     restrict: 'EAC',
+//     replace: true,
+//     templateUrl: 'templates/directive-templates/backgroundLink.html',
+//     scope: {background: '='}
+//     link: function(scope, element, attr) {
+//     }
+//   }
+// })
