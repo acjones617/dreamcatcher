@@ -9,7 +9,6 @@ browse.controller('BrowseC', function($scope, $state, $rootScope, $firebase) {
   $scope.browseDreams = [];
   
   $scope.showDream = function() {
-    console.log($scope.browseDreams);
     var length = $scope.browseDreams.length;
     var randomIndex = Math.floor(Math.random()*length);
     $scope.visibleDream = $scope.browseDreams[randomIndex];
