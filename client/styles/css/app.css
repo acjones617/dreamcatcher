@@ -1,11 +1,11 @@
 body {
-  background-color: #D3E3FF;
+  background-color: #FFF6EC;
   padding-top: 70px;
   font-family: 'Dancing Script'
 }
 
 .container {
-  background-color: #D3E3FF;
+  background-color: #FFF6EC;
 }
 
 .auth-box {
@@ -15,25 +15,37 @@ body {
   margin: 20px auto;
   padding: 30px;
   border: solid black 3px;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 .navbar {
-  background-color: #D4D4D4;
+  background-color: #FFF6EC;
+  border-bottom: 1px solid black;
+}
+
+#footer {
+  background-color: #FFF6EC;
 }
 
 .icon-bar {
   font-size: 200%;
   padding: 5px 20px;
-  margin: 0px;
-  border-right: black solid 2px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.icon-bar:hover {
+  background-color: #FFE1C1;
+}
+
+.iconBarSelected {
+  background-color: #FFD2A5;
 }
 
 .last-icon {
   font-size: 200%;
   padding: 5px 20px;
   margin: 0px;
-  float: right;
 }
 
 .body > #footer {
@@ -53,6 +65,8 @@ body {
   font-size: 300%;
   font-weight: bold;
   text-align: center;
+  border: 3px solid black;
+  border-radius: 20px;
 }
 
 .dream-to-be > p {
@@ -68,7 +82,7 @@ body {
   font-weight: bold;
   text-align: center;
   border: 3px solid black;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
 .previous-dream > p:nth-child(1) {
@@ -142,4 +156,12 @@ body {
 
 .spaces {
   margin-bottom: 100px;
+}
+
+.browse-button {
+  text-align: center;
+  margin: 10px 5px 100px;
+  background-color: #FFF6EC;
+  border: 3px solid black;
+  font-size: 150%;
 }
