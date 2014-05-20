@@ -1,11 +1,6 @@
 <div ng-controller="AuthC">
   <div ng-show="showLogin" class="auth-box">
     <h2>Login</h2>
-<!--     <form ng-submit="userControl.login()" name="authorization">
-      email <input type="email" ng-model="cred.email"/>
-      password <input type="password" ng-model="cred.password"/>
-      <input type="submit" value="Log in">
-    </form>-->    
   <form role="form" ng-submit="userControl.login()" name="authorization">
     <div class="form-group">
       <label for="inputEmail">Email address</label>
@@ -57,16 +52,6 @@
         </div>
         <button type="submit" class="btn btn-default" ng-disabled="newUser.$invalid">Sign up</button>
       </form>
-<!--     <form ng-submit="userControl.signup()" name="newUser">
-      email <input type="email" ng-model="signup.email" required> <br>
-      password <input type="password" ng-model="signup.password" required> <br>
-      first name <input type="password" ng-model="signup.firstname" required> <br>
-      last name <input type="password" ng-model="signup.lastname" required> <br>
-      city of residence <input type="password" ng-model="signup.city" required> <br>
-      birthday <input type="date" ng-model="signup.birthday" required> <br>
-      What did you want to be when you grew up when you were 5? <input type="text" ng-model="signup.growup" required> <br>
-      <input type='submit' value='submit' ng-disabled="newUser.$invalid">
-    </form> -->
     Or
   <br>
     <button class="btn btn-default" ng-click="toggleLoginSignup()">Login!</button>
