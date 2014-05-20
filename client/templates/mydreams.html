@@ -1,6 +1,14 @@
 <div ng-controller="DreamsC">
-  You are in my dreams
-  <div ng-repeat="dream in personalDreams">
-    {{ dream.text }}
+  <div class='search-box'>Search:
+  <input type='text' name='Search' ng-model='search'>
   </div>
+  <div class="row">
+  <div ng-repeat="dream in personalDreams | filter:search">
+    <div class="col-xs-offset-2 col-xs-3 previous-dream {{ dream.font }} {{ dream.background }}" ng-class="[bg.image, font.style]">
+      <p>{{ dream.text }}</p>
+      <p class="encourage"> Encouragements: {{ dream.encouragements }} </p>
+    </div>
+  </div>
+  </div>
+  <div class="spaces"></div>
 </div>

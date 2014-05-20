@@ -16,8 +16,7 @@ app.controller('DreamsC', function($scope, $state, $rootScope, $firebase) {
     var allDreams = snapshot.val();
     console.log(allDreams);
     _.each(snapshot.val(), function(dream) {
-      $scope.personalDreams.push(dream);
-      $scope.predicate = -dream.encouragements;
+      $scope.personalDreams.unshift(dream);
       console.log($scope.personalDreams);
     })
   })
