@@ -68,13 +68,11 @@ app.service('myAuthService', function($rootScope, $firebase, $state) {
       $rootScope.$emit("login", user);
       $rootScope.user = user;
       $rootScope.user.username = $rootScope.user.email.split("@")[0];
-      console.log($rootScope.user);
+      console.log($rootScope.user, 'simple login');
       $state.go('root.home');
-    }
-    else if (error) {
+    } else if (error) {
       $rootScope.$emit("loginError", error);
-    }
-    else {
+    } else {
       $rootScope.$emit("logout");
       $state.go('authorization');
     }
@@ -100,6 +98,7 @@ app.controller('RootC', function($scope, myAuthService, $state, $rootScope) {
   }
 
   $scope.logout = function() {
+    $rootScope.user = {};
     myAuthService.auth.logout();
     $state.go('authorization');
   }
@@ -111,9 +110,12 @@ app.controller('AuthC', function($scope, $firebase, $rootScope, myAuthService, $
   $scope.showSignup = true;
   $scope.showNextSignup = false;
 
+  window.runInfinity('#infinity');
+
   $scope.toggleLoginSignup = function() {
     $scope.showLogin = !$scope.showLogin;
     $scope.showSignup = !$scope.showSignup;
+    window.runInfinity('#infinity');
   }
 
   $scope.userControl.login = function() {
@@ -132,28 +134,31 @@ app.controller('AuthC', function($scope, $firebase, $rootScope, myAuthService, $
 
   $scope.userControl.signup = function() {
     $scope.signup.username = $scope.signup.email.split('@')[0];
-    $rootScope.user = $scope.signup.username;
+    $rootScope.user = {}
+    $rootScope.user.username = $scope.signup.username;
     // $scope.toSignup = {};
     // $scope.toSignup.email = $scope.signup.email;
     // $scope.toSignup.email = $scope.signup.email;
     $scope.showSignup = false;
     $scope.showNextSignup = true;
+    window.runInfinity('#infinity');
   };
 
   $scope.userControl.completeSignup = function() {
     myAuthService.auth.createUser($scope.signup.email, $scope.signup.password, function(error, user) {
       console.log('creating user');
       if (!error) {
-        console.log('User Id: ' + user.uid + ', Email: ' + user.email);
-        refUsers.push({
+        var user = {
           username: $scope.signup.username, 
           email: $scope.signup.email,
-          firstname: $scope.signup.firstname,
-          lastname: $scope.signup.lastname,
-          city: $scope.signup.city,
-          birthday: $scope.signup.birthday,
-          growup: $scope.signup.growup
-          });
+          firstname: $scope.signup.firstname || '',
+          lastname: $scope.signup.lastname || '',
+          city: $scope.signup.city || 'Earth',
+          birthday: $scope.signup.birthday || '',
+          growup: $scope.signup.growup || '' }
+        $rootScope.user = user;
+        console.log('User Id: ' + user.uid + ', Email: ' + user.email, $rootScope.user);
+        refUsers.push(user);
         myAuthService.auth.login('password', {
           email: $scope.signup.email,
           password: $scope.signup.password
@@ -170,13 +175,19 @@ app.controller('AuthC', function($scope, $firebase, $rootScope, myAuthService, $
     // do login things
     // $scope.userControl.user = user;
     // window.user = user;
-    // console.log('logged in', user, $scope.userControl.user); 
-    // $state.go('');
   })
   $rootScope.$on("loginError", function(event, error) {
     // tell the user about the error
     console.log('login error', error);
-  })
+    $scope.invalidUser = false;
+    $scope.invalidPass = false;
+    if (error.code === 'INVALID_EMAIL') {
+      $scope.invalidUser = true;
+    } else if (error.code === 'INVALID_PASSWORD') {
+      $scope.invalidPass = true;
+    }
+    $scope.$apply();
+  });
   $rootScope.$on("logout", function(event) {
     // do logout things
     // $scope.userControl.user = undefined;

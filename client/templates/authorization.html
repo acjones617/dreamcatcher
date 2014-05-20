@@ -1,6 +1,8 @@
 <div ng-controller="AuthC">
+  <div class="title"><h1> The Dream Catcher </h1></div>
+  <div id="infinity"></div>
   <div ng-show="showLogin" class="auth-box">
-    <h2>Login</h2>
+    <h2>Login:</h2>
   <form role="form" ng-submit="userControl.login()" name="authorization">
     <div class="form-group">
       <label for="inputEmail">Email address</label>
@@ -10,17 +12,19 @@
       <label for="inputPassword">Password</label>
       <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="cred.password">
     </div>
+    <div ng-show="invalidUser" class="invalidLogin">Sorry, we do not have a user with that email on record. Move on over to Sign up below</div>
+    <div ng-show="invalidPass" class="invalidLogin">Sorry, incorrect password</div> 
     <button type="submit" class="btn btn-default" ng-disabled="authorization.$invalid">Login</button>
   </form>
   <div class="toggle">
-   Or <button class="btn btn-default" ng-click="toggleLoginSignup()">Sign up!</button>
+   <button class="btn btn-default" ng-click="toggleLoginSignup()">Or Sign up!</button>
  </div>
   </div>
 
 
 
   <div ng-show="showSignup" class="auth-box">
-    <h2>Sign up</h2>
+    <h2>Sign up:</h2>
       <form role="form" ng-submit="userControl.signup()" name="newUser">
         <div class="form-group">
           <label for="inputEmail">Email address</label>
@@ -33,12 +37,12 @@
         <button type="submit" class="btn btn-default" ng-disabled="newUser.$invalid">Sign up</button>
       </form>
       <div class="toggle">
-    Or  <button class="btn btn-default" ng-click="toggleLoginSignup()">Login!</button>
+    <button class="btn btn-default" ng-click="toggleLoginSignup()">Or Login!</button>
   </div>
   </div>
       
   <div ng-show="showNextSignup" class="auth-box">
-    <h2>Personal Information</h2>
+    <h2>Personal Information:</h2>
       <form role="form" ng-submit="userControl.completeSignup()" name="completeSignup">
         <div class="form-group">
           <label for="inputFirst">First name</label>
