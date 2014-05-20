@@ -85,6 +85,8 @@ app.service('myAuthService', function($rootScope, $firebase, $state) {
 app.controller('RootC', function($scope, myAuthService, $state, $rootScope) {
   $scope.bar0 = true;
 
+  window.runInfinity('#footer');
+
   $scope.runInfinity = function(num) {
     window.runInfinity('#footer');
     for (var i = 0; i < 4; i++) {
@@ -113,10 +115,10 @@ app.controller('LogoutC', function($scope, $firebase, $rootScope, myAuthService,
 app.controller('AuthC', function($scope, $firebase, $rootScope, myAuthService, $state) {
   $scope.userControl = {}
   $scope.showLogin = false;
-  $scope.showSignup = true  ;
+  $scope.showSignup = true;
+  $scope.showNextSignup = false;
 
   $scope.toggleLoginSignup = function() {
-    console.log('whats going on');
     $scope.showLogin = !$scope.showLogin;
     $scope.showSignup = !$scope.showSignup;
   }
@@ -138,6 +140,14 @@ app.controller('AuthC', function($scope, $firebase, $rootScope, myAuthService, $
   $scope.userControl.signup = function() {
     $scope.signup.username = $scope.signup.email.split('@')[0];
     $rootScope.user = $scope.signup.username;
+    // $scope.toSignup = {};
+    // $scope.toSignup.email = $scope.signup.email;
+    // $scope.toSignup.email = $scope.signup.email;
+    $scope.showSignup = false;
+    $scope.showNextSignup = true;
+  };
+
+  $scope.userControl.completeSignup = function() {
     myAuthService.auth.createUser($scope.signup.email, $scope.signup.password, function(error, user) {
       console.log('creating user');
       if (!error) {
@@ -160,7 +170,6 @@ app.controller('AuthC', function($scope, $firebase, $rootScope, myAuthService, $
       }
 
     });
-
   };
 
   // listen for user auth events
