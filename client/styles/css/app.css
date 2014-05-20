@@ -14,7 +14,7 @@ input {
 }
 
 .auth-box {
-  background-color: #D4D4D4;
+  background-color: #FAFAFA;
   width: 700px;
   height: auto;
   margin: 20px auto;
@@ -98,15 +98,17 @@ input {
   border-radius: 10px;
 }
 
-.previous-dream > p:nth-child(1) {
-  padding-top: 15%;
+.previous-dream > p {
+  padding-top: 5%;
 }
 
-.previous-dream > p:nth-child(2) {
-  padding-top: 26%;
-  font-family:'Dancing Script';
-  font-size: 100%;
-
+.previous-dream > span {
+  bottom: -30px;
+  left: 10px;
+  text-align: center;
+  font-family: 'Dancing Script';
+  font-size: 75%;
+  position: absolute;
 }
 
 .three-backgrounds {
@@ -180,4 +182,13 @@ input {
   background-color: #FFF6EC;
   border: 3px solid black;
   font-size: 150%;
+}
+
+.modal-body {
+  background-color: #FFF6EC;
+}
+
+.modal-dream {
+  height: 500px;
+  font-size: 400%;
 }

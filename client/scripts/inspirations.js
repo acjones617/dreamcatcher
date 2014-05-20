@@ -2,10 +2,11 @@ var inspirations = angular.module('myApp.inspirations', [
   'ui.router',
   'ngAnimate',
   'fx.animations',
+  'myApp.services',
   'firebase']);
 
-inspirations.controller('InspireC', function($scope, $state, $rootScope, $firebase) {  
-  $scope.username = $rootScope.user.username || 'test2';
+inspirations.controller('InspireC', function($scope, $state, $rootScope, modal) {  
+  $scope.username = $rootScope.user.username
   $scope.popularDreams = [];
   var refDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/dreams");
   refDreams.on('value', function(snapshot) {
@@ -24,5 +25,8 @@ inspirations.controller('InspireC', function($scope, $state, $rootScope, $fireba
       }
     });
   };
+
+  $scope.modalDream = modal.showModal;
+
 });
 

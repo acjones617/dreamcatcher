@@ -2,18 +2,11 @@ var home = angular.module('myApp.home', [
   'ui.router',
   'ngAnimate',
   'fx.animations',
+  'myApp.services',
   'firebase']);
 
-home.controller('HomeC', function($scope, $state, $rootScope, $firebase) {
-  // $rootScope.on('login', function() {
-  //   $scope.user = user;
-  // })
-  // $scope.testTHIS = 'TESTTESTTESTTESTTEST';
-
+home.controller('HomeC', function($scope, $state, $rootScope, $firebase, modal) {
   $scope.dream = {};
-  if ($rootScope.user) {
-    $scope.username = $rootScope.user.username || 'test';
-  }
 
   $scope.bg = {one: false, two: true, three: false, image: 'background-option-two'};
 
@@ -62,29 +55,26 @@ home.controller('HomeC', function($scope, $state, $rootScope, $firebase) {
   }
 
   var refDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/dreams");
-  var personalDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/personal/"+$scope.username);
 
   $scope.submit = function() {
-    console.log('new dream');
+    var personalDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/personal/"+$rootScope.user.username);
+    console.log('new dream', $scope.dream.text);
     var date = new Date().getTime();
-    refDreams.push({
-      username: $scope.username || 'test',
+    var dream = {
+      username: $rootScope.user.username,
       text: $scope.dream.text,
-      font: $scope.font.style || 'griffy',
-      background: $scope.bg.image || 'floral',
+      font: $scope.font.style,
+      background: $scope.bg.image,
       createdAt: date,
       encouragements: 0
-      });
-    personalDreams.push({
-      text: $scope.dream.text,
-      font: $scope.font.style || 'griffy',
-      background: $scope.bg.image || 'floral',
-      createdAt: date,
-      encouragements: 0
-    })
+      };
+    refDreams.push(dream);
+    personalDreams.push(dream);
+
     delete $scope.dream.text;
+    modal.showModal(dream);
   };
-})
+});
 
 // home.controller('HomeC', function($scope, $firebase, $state) {
 //   $scope.user = 'ANDREW';

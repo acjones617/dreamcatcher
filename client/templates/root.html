@@ -19,6 +19,18 @@
     </div>
   </nav>
 
+  <div class="modal fade" id="dreamModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="modal-dream dream-to-be" ng-class="[modal.background, modal.font]">
+            <p>{{ modal.text }}</p>
+          </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
   <div ui-view></div>
 <!-- FOOTER -->
 <div id="footer" class="navbar navbar-fixed-bottom container">
