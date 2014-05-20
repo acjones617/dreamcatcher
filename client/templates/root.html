@@ -1,11 +1,22 @@
-<div ng-controller="RootC">
+
+<div ng-controller="RootC" class="container">
 <!-- HEADER -->
-  <a ui-sref='root.home'>Home</a>
-  <a ui-sref='root.mydreams'>My Dreams</a>
-  <a ui-sref='root.inspirations'>Inspirations</a>
-  <a ui-sref='root.browse'>Browse</a>
-  <a ui-sref='root.settings'>Settings</a>
-  <div ng-controller="LogoutC"><button ng-click="logout()">Logout</button></div>
+  <nav class="navbar navbar-default navbar-fixed-top container" role="navigation">
+    <div class="navbar-header">
+    <ul class="nav navbar-nav">
+      
+      <li class="icon-bar"><a ng-click="runInfinity()" ui-sref="root.home">Home</a></li>
+      <li class="icon-bar"><a ng-click="runInfinity()" ui-sref='root.mydreams'>My Dreams</a></li>
+      <li class="icon-bar"><a ng-click="runInfinity()" ui-sref='root.inspirations'>Inspirations</a></li>
+      <li class="icon-bar"><a ng-click="runInfinity()" ui-sref='root.browse'>Browse</a></li>
+      <li class="icon-bar"><a ng-click="runInfinity()" ui-sref='root.settings'>Settings</a></li>
+      <li class="last-icon" ng-controller="LogoutC"><a ng-click="logout()">Logout</a></li>
+    </ul>
+  
+    </div>
+  </nav>
   <div ui-view></div>
 <!-- FOOTER -->
+<div id="footer" class="navbar navbar-fixed-bottom container">
+</div>
 </div>
