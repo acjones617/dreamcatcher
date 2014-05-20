@@ -4,6 +4,8 @@ window.runInfinity = function(where) {
     height: $(where).height(),
   };
 
+  console.log('running', where);
+
   var x = 80;
   var params = {
     cx: specs.width/2,
