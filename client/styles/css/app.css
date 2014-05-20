@@ -1,5 +1,5 @@
 body {
-  background-color: #FFF6EC;
+  background-color: #E0FFD2;
   padding-top: 70px;
   font-family: 'Dancing Script'
 }
@@ -10,11 +10,11 @@ input {
 }
 
 .container {
-  background-color: #FFF6EC;
+  background-color: #E0FFD2;
 }
 
 .auth-box {
-  background-color: #FFD2A5;
+  background-color: #A8BF9E;
   width: 700px;
   height: auto;
   margin: 20px auto;
@@ -33,12 +33,12 @@ input {
 }
 
 .navbar {
-  background-color: #FFF6EC;
+  background-color: #E0FFD2;
   border-bottom: 1px solid black;
 }
 
 #footer {
-  background-color: #FFF6EC;
+  background-color: #E0FFD2;
 }
 
 .icon-bar {
@@ -58,11 +58,11 @@ input {
 }
 
 .icon-bar:hover {
-  background-color: #FFE1C1;
+  background-color: #C9E5BD;;
 }
 
 .iconBarSelected {
-  background-color: #FFD2A5;
+  background-color: #A8BF9E;
 }
 
 .body > #footer {
@@ -170,7 +170,7 @@ input {
 }
 
 .fontoption:hover {
-  background-color: #FFE1C1;
+  background-color: #C9E5BD;;
 }
 
 .font-option-one {
@@ -214,7 +214,7 @@ input {
 
 .browse-button, .message-footer-button {
   text-align: center;
-  background-color: #FFF6EC;
+  background-color: #E0FFD2;
   border: 3px solid black;
   font-size: 150%;
   border-radius: 10px;
@@ -237,7 +237,7 @@ input {
 
 .modal-body {
   border-radius: 20px;
-  background-color: #FFF6EC;
+  background-color: #E0FFD2;
 }
 
 .modal-dream {
@@ -250,7 +250,7 @@ input {
 }
 
 .browse-footer:hover {
-  background-color: #FFE1C1
+  background-color: #C9E5BD;
 }
 
 #infinity {
