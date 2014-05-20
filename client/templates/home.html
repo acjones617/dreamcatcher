@@ -1,9 +1,25 @@
 <div ng-controller="HomeC">
-  You are home
-  <form ng-submit="submit()" name="newDream">
-    <input type="text" ng-model="dream.text" required> <br>
-    <input type='submit' value='submit' ng-disabled="newDream.$invalid">
-  </form>
-  {{dream.text}}
-  {{user}}
+  <div class="top"></div>
+  <div class="three-backgrounds row">
+    <div class="col-xs-offset-1 col-xs-2 background-option-one bgoption" ng-click="bg.setOne()" ng-class="{'selected': bg.one}"></div>
+    <div class="col-xs-offset-2 col-xs-2 background-option-two bgoption" ng-click="bg.setTwo()" ng-class="{'selected': bg.two}"></div>
+    <div class="col-xs-offset-2 col-xs-2 background-option-three bgoption" ng-click="bg.setThree()" ng-class="{'selected': bg.three}"></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-offset-3 col-xs-6 dream-to-be" ng-class="[bg.image, font.style]">
+      <p>{{ dream.text }}</p>
+    </div>
+  </div>
+  <div class="three-fonts row">
+    <div class="col-xs-offset-1 col-xs-2 font-option-one fontoption" ng-click="font.setOne()" ng-class="{'selected': font.one}">abcde</div>
+    <div class="col-xs-offset-2 col-xs-2 font-option-two fontoption" ng-click="font.setTwo()" ng-class="{'selected': font.two}">abcde</div>
+    <div class="col-xs-offset-2 col-xs-2 font-option-three fontoption" ng-click="font.setThree()" ng-class="{'selected': font.three}">abcde</div>
+  </div>
+  <div class="new-dream-form">
+    What is your dream?
+    <form ng-submit="submit()" name="newDream">
+      <input type="text" ng-model="dream.text" required> <br>
+      <input type='submit' value='submit' ng-disabled="newDream.$invalid">
+    </form>
+  </div>
 </div>
