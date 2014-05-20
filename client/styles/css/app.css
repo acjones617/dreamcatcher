@@ -4,6 +4,11 @@ body {
   font-family: 'Dancing Script'
 }
 
+input {
+  border-radius: 10px;
+  margin: 5px;
+}
+
 .container {
   background-color: #FFF6EC;
 }
@@ -16,6 +21,11 @@ body {
   padding: 30px;
   border: solid black 3px;
   border-radius: 10px;
+  font-size: 150%;
+}
+
+.toggle {
+  margin-top: 20px;
 }
 
 .navbar {
@@ -28,9 +38,18 @@ body {
 }
 
 .icon-bar {
-  font-size: 200%;
-  padding: 5px 20px;
+  font-size: 150%;
+  padding: 5px 10px;
   margin: 5px;
+  border-radius: 10px;
+}
+
+.logo {
+  font-size: 200%;
+  font-weight: bold;
+  padding: 7px;
+  margin: 8px;
+  background-color: #A7A377;
   border-radius: 10px;
 }
 
@@ -40,12 +59,6 @@ body {
 
 .iconBarSelected {
   background-color: #FFD2A5;
-}
-
-.last-icon {
-  font-size: 200%;
-  padding: 5px 20px;
-  margin: 0px;
 }
 
 .body > #footer {
@@ -70,7 +83,7 @@ body {
 }
 
 .dream-to-be > p {
-  padding-top: 15%;
+  padding-top: 5%;
 }
 
 .previous-dream {
@@ -100,8 +113,12 @@ body {
   margin-top: 10px;
 }
 
+.three-backgrounds > div {
+  border-radius: 10px;
+}
+
 .background-option-one {
-  background-image: url('../../backgrounds/vintage-world.jpg');
+  background-image: url('../../backgrounds/balloon.jpg');
 }
 
 .background-option-two {
@@ -111,7 +128,6 @@ body {
 .background-option-three {
   background-image: url('../../backgrounds/open-green.jpg');
 }
-
 
 .fontoption {
   text-align: center;
@@ -132,7 +148,7 @@ body {
 
 .selected {
   border: 5px solid black;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .new-dream-form {
@@ -143,12 +159,12 @@ body {
 }
 
 .new-dream-form > form > input:first-child {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  width: 200px;
+  width: 400px;
+  margin-right: 20px;
 }
 
 .search-box {
+  margin-top: 5px;
   text-align: center;
   font-weight: bold;
   font-size: 150%;
