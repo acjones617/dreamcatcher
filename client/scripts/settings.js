@@ -1,10 +1,10 @@
-var home = angular.module('myApp.settings', [
+var settings = angular.module('myApp.settings', [
   'ui.router',
   'ngAnimate',
   'fx.animations',
   'firebase']);
 
-app.controller('SettingsC', function($scope, $state, $rootScope, $firebase) {
+settings.controller('SettingsC', function($scope, $state, $rootScope, $firebase) {
   // $rootScope.on('login', function() {
   //   $scope.user = user;
   // })
