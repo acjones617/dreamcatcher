@@ -14,9 +14,15 @@ inspirations.controller('InspireC', function($scope, $state, $rootScope, $fireba
       if (dream.username !== $scope.username) {
         $scope.popularDreams.push(dream);
       }
-    })
-  })
+    });
+  });
   
-  
-})
+  $scope.addEncouragement = function(username, text) {
+    _.each($scope.popularDreams, function(dream) {
+      if (dream.username === username && dream.text === username) {
+        dream.encouragements += 1;
+      }
+    });
+  };
+});
 
