@@ -16,6 +16,7 @@ inspirations.controller('InspireC', function($scope, $state, $rootScope, modal) 
         $scope.popularDreams.push(dream);
       }
     });
+    $scope.$apply();
   });
   
   $scope.addEncouragement = function(username, text) {

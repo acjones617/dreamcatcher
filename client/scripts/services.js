@@ -10,4 +10,26 @@ services.factory('modal', function($rootScope) {
       $('#dreamModal').modal('show');
     }
   };
-})
+});
+
+services.factory('getDreams', function($http) {
+  return {
+    otherDreams: function(username) {
+      return $http({
+        method: 'GET',
+        url: '/ajax/dreams?username='+username
+      });
+    },
+    myDreams: function(username) {
+      return $http({
+        method: 'GET',
+        url: '/ajax/personal/'+username
+      })
+    },
+    postDream: function(username, dream) {
+
+      return $http.post('/links', dream);
+    }
+
+  }
+});

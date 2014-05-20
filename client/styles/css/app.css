@@ -70,6 +70,13 @@ input {
   background-size: cover;
 }
 
+.trending {
+  text-align: center;
+  font-weight: bold;
+  margin: 30px 0 20px;
+  font-size: 250%;
+}
+
 .dream-to-be {
   height: 250px;
   margin-top: 20px;
@@ -80,6 +87,8 @@ input {
   text-align: center;
   border: 3px solid black;
   border-radius: 20px;
+  cursor: pointer; 
+  cursor: hand;
 }
 
 .dream-to-be > p {
@@ -96,6 +105,8 @@ input {
   text-align: center;
   border: 3px solid black;
   border-radius: 10px;
+  cursor: pointer; 
+  cursor: hand;
 }
 
 .previous-dream > p {
@@ -182,6 +193,7 @@ input {
   background-color: #FFF6EC;
   border: 3px solid black;
   font-size: 150%;
+  border-radius: 10px;
 }
 
 .modal-body {

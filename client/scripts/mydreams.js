@@ -6,17 +6,18 @@ var mydreams = angular.module('myApp.mydreams', [
   ]);
 
 mydreams.controller('DreamsC', function($scope, $state, $rootScope, $firebase, modal) {
-  $scope.username = $rootScope.user.username || 'test';
-  $scope.personalDreams = $scope.personalDreams || [];
+  // $scope.username = $rootScope.user.username;
+  // $scope.personalDreams = $scope.personalDreams || [];
+  $scope.personalDreams = [];
 
   var refDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/personal/"+$scope.username);
   refDreams.on('value', function(snapshot) {
     var allDreams = snapshot.val();
-    console.log(allDreams);
     _.each(snapshot.val(), function(dream) {
       $scope.personalDreams.unshift(dream);
       console.log($scope.personalDreams);
     })
+    $scope.$apply();
   })
   
   $scope.modalDream = modal.showModal;
