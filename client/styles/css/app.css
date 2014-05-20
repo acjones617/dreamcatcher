@@ -1,5 +1,11 @@
 body {
   background-color: #E7E3E8;
+  padding-top: 70px;
+  font-family: 'Dancing Script'
+}
+
+.container {
+  background-color: #D3E3FF;
 }
 
 .auth-box {
@@ -10,4 +16,26 @@ body {
   padding: 30px;
   border: solid black 3px;
   border-radius: 4px;
+}
+
+.navbar {
+  background-color: #D4D4D4;
+}
+
+.icon-bar {
+  font-size: 200%;
+  padding: 5px 20px;
+  margin: 0px;
+  border-right: black solid 2px;
+}
+
+.last-icon {
+  font-size: 200%;
+  padding: 5px 20px;
+  margin: 0px;
+  float: right;
+}
+
+.body > #footer {
+  padding-top: 60px;
 }
