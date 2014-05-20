@@ -15,7 +15,7 @@ home.controller('HomeC', function($scope, $state, $rootScope, $firebase) {
     $scope.username = $rootScope.user.username || 'test';
   }
 
-  $scope.bg = {one: true, two: false, three: false, image: 'background-option-one'};
+  $scope.bg = {one: false, two: true, three: false, image: 'background-option-two'};
 
   $scope.bg.setOne = function() {
     $scope.bg.one = true;
@@ -38,7 +38,7 @@ home.controller('HomeC', function($scope, $state, $rootScope, $firebase) {
     $scope.bg.image = 'background-option-three';
   }
   
-  $scope.font = {one: true, two: false, three: false, style: 'font-option-one'};
+  $scope.font = {one: false, two: true, three: false, style: 'font-option-two'};
 
   $scope.font.setOne = function() {
     $scope.font.one = true;
