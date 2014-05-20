@@ -12,7 +12,7 @@ console.log(specs.width, specs.height);
     cy: specs.height/2,
     x: x,
     y: x*0.25,
-    r: x/25,
+    r: x/18,
     delay: 15,
     trans: 800  
   }
@@ -47,12 +47,12 @@ console.log(specs.width, specs.height);
     }
   }
 
-  var alternateColors = function(d, i) {
-    if (i % 2 === 0) {
-      return 'steelblue';
-    }
-    return 'black';
-  }
+  // var alternateColors = function(d, i) {
+  //   if (i % 2 === 0) {
+  //     return 'steelblue';
+  //   }
+  //   return 'black';
+  // }
 
   var moveCirc = function(data) {
     var circles = svg.selectAll('circle').data(data);
@@ -62,7 +62,7 @@ console.log(specs.width, specs.height);
       .attr('cx', function(d) { return d.x; })
       .attr('cy', function(d) { return d.y; })
       .attr('r', 0)
-      .attr('fill', alternateColors)
+      .attr('fill', 'black')
       .transition().duration(params.trans)
       .delay(function(d, i) { return i * params.delay; })
       .attr('r', function(d) {return d.r; });
