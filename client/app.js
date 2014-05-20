@@ -105,13 +105,6 @@ app.controller('RootC', function($scope, myAuthService, $state, $rootScope) {
   }
 });
 
-app.controller('LogoutC', function($scope, $firebase, $rootScope, myAuthService, $state) {
-  $scope.logout = function() {
-    myAuthService.auth.logout();
-    $state.go('authorization');
-  }
-});
-
 app.controller('AuthC', function($scope, $firebase, $rootScope, myAuthService, $state) {
   $scope.userControl = {}
   $scope.showLogin = false;
@@ -192,13 +185,3 @@ app.controller('AuthC', function($scope, $firebase, $rootScope, myAuthService, $
 });
 
 
-// app.directive('backgroundLink', function() {
-//   return {
-//     restrict: 'EAC',
-//     replace: true,
-//     templateUrl: 'templates/directive-templates/backgroundLink.html',
-//     scope: {background: '='}
-//     link: function(scope, element, attr) {
-//     }
-//   }
-// })
