@@ -1,5 +1,5 @@
 body {
-  background-color: #E7E3E8;
+  background-color: white;
   padding-top: 70px;
   font-family: 'Dancing Script'
 }
@@ -38,4 +38,74 @@ body {
 
 .body > #footer {
   padding-top: 60px;
+}
+
+.bgoption {
+  height: 80px;
+  background-size: cover;
+}
+
+.dream-to-be {
+  height: 250px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-size: cover;
+  font-size: 300%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.dream-to-be > p {
+  padding-top: 30px;
+}
+
+.three-backgrounds {
+  margin-top: 10px;
+}
+
+.background-option-one {
+  background-image: url('../../backgrounds/vintage-world.jpg');
+}
+
+.background-option-two {
+  background-image: url('../../backgrounds/vintage-floral2.jpeg');
+}
+
+.background-option-three {
+  background-image: url('../../backgrounds/open-green.jpg');
+}
+
+
+.fontoption {
+  text-align: center;
+  padding: 7px;
+}
+
+.font-option-one {
+  font-family: "The Girl Next Door";
+}
+
+.font-option-two {
+  font-family: "Griffy";
+}
+
+.font-option-three {
+  font-family: "Special Elite";
+}
+
+.selected {
+  border: 5px solid black;
+  border-radius: 5px;
+}
+
+.new-dream-form {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 200%;
+}
+
+.new-dream-form > form > input:first-child {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 200px;
 }
