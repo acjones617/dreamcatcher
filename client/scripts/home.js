@@ -4,31 +4,88 @@ var home = angular.module('myApp.home', [
   'fx.animations',
   'firebase']);
 
-app.controller('HomeC', function($scope, $state, $rootScope, $firebase) {
+home.controller('HomeC', function($scope, $state, $rootScope, $firebase) {
   // $rootScope.on('login', function() {
   //   $scope.user = user;
   // })
+  // $scope.testTHIS = 'TESTTESTTESTTESTTEST';
 
   $scope.dream = {};
-  $scope.username = $rootScope.user.username || 'test';
+  if ($rootScope.user) {
+    $scope.username = $rootScope.user.username || 'test';
+  }
+
+  $scope.bg = {one: true, two: false, three: false, image: 'background-option-one'};
+
+  $scope.bg.setOne = function() {
+    $scope.bg.one = true;
+    $scope.bg.two = false;
+    $scope.bg.three = false;
+    $scope.bg.image = 'background-option-one';
+  }
+
+  $scope.bg.setTwo = function() {
+    $scope.bg.one = false;
+    $scope.bg.two = true;
+    $scope.bg.three = false;
+    $scope.bg.image = 'background-option-two';
+  }
+
+  $scope.bg.setThree = function() {
+    $scope.bg.one = false;
+    $scope.bg.two = false;
+    $scope.bg.three = true;
+    $scope.bg.image = 'background-option-three';
+  }
   
+  $scope.font = {one: true, two: false, three: false, style: 'font-option-one'};
+
+  $scope.font.setOne = function() {
+    $scope.font.one = true;
+    $scope.font.two = false;
+    $scope.font.three = false;
+    $scope.font.style = 'font-option-one';
+  }
+
+  $scope.font.setTwo = function() {
+    $scope.font.one = false;
+    $scope.font.two = true;
+    $scope.font.three = false;
+    $scope.font.style = 'font-option-two';
+  }
+
+  $scope.font.setThree = function() {
+    $scope.font.one = false;
+    $scope.font.two = false;
+    $scope.font.three = true;
+    $scope.font.style = 'font-option-three';
+  }
+
   var refDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/dreams");
   var personalDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/personal/"+$scope.username);
 
   $scope.submit = function() {
     console.log('new dream');
+    console.log({
+      username: $scope.username || 'test',
+      text: $scope.dream.text,
+      font: $scope.font.style || 'griffy',
+      background: $scope.bg.image || 'floral',
+      createdAt: new Date(),
+      encouragements: 0
+      });
     refDreams.push({
       username: $scope.username || 'test',
       text: $scope.dream.text,
-      font: $scope.dream.font || 'griffy',
-      background: $scope.dream.background || 'floral',
+      font: $scope.font.style || 'griffy',
+      background: $scope.bg.image || 'floral',
       createdAt: new Date(),
       encouragements: 0
       });
     personalDreams.push({
       text: $scope.dream.text,
-      font: $scope.dream.font || 'griffy',
-      background: $scope.dream.background || 'floral',
+      font: $scope.font.style || 'griffy',
+      background: $scope.bg.image || 'floral',
       createdAt: new Date(),
       encouragements: 0
     })
