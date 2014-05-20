@@ -27,6 +27,8 @@ var app = express();
   app.use(middle.handleError);
 // });
 
+app.get('/ajax/personal/:user', handler.returnPersonal);}
+
 app.get('/*', handler.renderIndex);
 
 
