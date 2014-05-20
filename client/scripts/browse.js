@@ -9,19 +9,30 @@ browse.controller('BrowseC', function($scope, $state, $rootScope, $firebase) {
   $scope.browseDreams = [];
   
   $scope.showDream = function() {
+    console.log($scope.browseDreams);
     var length = $scope.browseDreams.length;
     var randomIndex = Math.floor(Math.random()*length);
     $scope.visibleDream = $scope.browseDreams[randomIndex];
   };
 
+  $scope.encourageDream = function() {
+    $scope.visibleDream.encouragement += 1;
+  }
+
+  $scope.sendMessage = function() {
+    //$scope.visibleDream
+  }
+
   var refDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/dreams");
   refDreams.on('value', function(snapshot) {
     var allDreams = snapshot.val();
-    _.each(snapshot.val(), function(dream) {
+    console.log(allDreams);
+    for (var obj in allDreams) {
+      var dream = allDreams[obj];
       if (dream.username !== $scope.username) {
         $scope.browseDreams.push(dream);
       }
-    })
+    }
     $scope.showDream();
   });
 

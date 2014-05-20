@@ -1,5 +1,10 @@
 <div ng-controller="BrowseC">
-  You are in Browse
-  {{ visibleDream }}
-  <button ng-click="showDream()"> >> </button>
+  <div class="col-xs-offset-3 col-xs-6 dream-to-be" ng-class="[bg.image, font.style]">
+    <p>{{ visibleDream.text }}</p>
+  </div>
+  <div class="col-xs-offset-4 col-xs-6">
+    <button class="btn browse-button" ng-click="encourageDream()"> Encourage +1 </button>
+    <button class="btn browse-button" ng-click="showDream()"> next </button>
+    <button class="btn browse-button" ng-click="sendMessage()"> Send Message </button>
+  </div>
 </div>
