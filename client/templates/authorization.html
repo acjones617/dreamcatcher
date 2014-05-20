@@ -12,9 +12,9 @@
     </div>
     <button type="submit" class="btn btn-default" ng-disabled="authorization.$invalid">Login</button>
   </form>
-  Or
-  <br>
-    <button class="btn btn-default" ng-click="toggleLoginSignup()">Sign up!</button>
+  <div class="toggle">
+   Or <button class="btn btn-default" ng-click="toggleLoginSignup()">Sign up!</button>
+ </div>
   </div>
 
 
@@ -30,29 +30,35 @@
           <label for="inputPassword">Password</label>
           <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="signup.password" required>
         </div>
+        <button type="submit" class="btn btn-default" ng-disabled="newUser.$invalid">Sign up</button>
+      </form>
+      <div class="toggle">
+    Or  <button class="btn btn-default" ng-click="toggleLoginSignup()">Login!</button>
+  </div>
+  </div>
+      
+  <div ng-show="showNextSignup" class="auth-box">
+    <h2>Personal Information</h2>
+      <form role="form" ng-submit="userControl.completeSignup()" name="completeSignup">
         <div class="form-group">
           <label for="inputFirst">First name</label>
-          <input type="text" class="form-control" id="inputFirst" placeholder="Enter your first name" ng-model="signup.firstname" required>
+          <input type="text" class="form-control" id="inputFirst" placeholder="Enter your first name" ng-model="signup.firstname">
         </div>
         <div class="form-group">
           <label for="inputLast">Last name</label>
-          <input type="text" class="form-control" id="inputLast" placeholder="Enter your last name" ng-model="signup.lastname" required>
+          <input type="text" class="form-control" id="inputLast" placeholder="Enter your last name" ng-model="signup.lastname">
         </div>
         <div class="form-group">
           <label for="inputCity">City of Residence</label>
-          <input type="text" class="form-control" id="inputCity" placeholder="Where do you live?" ng-model="signup.city" required>
+          <input type="text" class="form-control" id="inputCity" placeholder="Where do you live?" ng-model="signup.city">
         </div>    
         <div class="form-group">
           <label for="inputBirthday">Birthday</label>
-          <input type="date" class="form-control" id="inputBirthday" ng-model="signup.birthday" required>
+          <input type="date" class="form-control" id="inputBirthday" ng-model="signup.birthday">
         </div>
         <div class="form-group">
           <label for="inputGrowup">At age 5, what did you want to be when you grew up?</label>
-          <input type="text" class="form-control" id="inputGrowup" placeholder="What did you want to be?" ng-model="signup.growup" required>
+          <input type="text" class="form-control" id="inputGrowup" placeholder="What did you want to be?" ng-model="signup.growup">
         </div>
-        <button type="submit" class="btn btn-default" ng-disabled="newUser.$invalid">Sign up</button>
+        <button type="submit" class="btn btn-default">Continue to the site</button>
       </form>
-    Or
-  <br>
-    <button class="btn btn-default" ng-click="toggleLoginSignup()">Login!</button>
-</div>
