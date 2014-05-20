@@ -83,11 +83,24 @@ app.service('myAuthService', function($rootScope, $firebase, $state) {
 
 
 app.controller('RootC', function($scope, myAuthService, $state, $rootScope) {
-  $scope.runInfinity = function() {
+  $scope.bar0 = true;
+
+  $scope.runInfinity = function(num) {
     window.runInfinity('#footer');
+    for (var i = 0; i < 4; i++) {
+      if (i === num) {
+        $scope['bar'+i] = true;
+      } else {
+        $scope['bar'+i] = false;
+      }
+      console.log($scope.bar0, $scope.bar1, $scope.bar2, $scope.bar3);
+    }
   }
-  // $scope.bg = {};
-  // $scope.bg.One = 'TESTESTTESTESTESTESTS'
+
+  $scope.logout = function() {
+    myAuthService.auth.logout();
+    $state.go('authorization');
+  }
 });
 
 app.controller('LogoutC', function($scope, $firebase, $rootScope, myAuthService, $state) {
