@@ -14,16 +14,22 @@ browse.controller('BrowseC', function($scope, $state, $rootScope, $firebase, mod
     var randomIndex = Math.floor(Math.random()*length);
     console.log(randomIndex);
     $scope.visibleDream = $scope.browseDreams[randomIndex];
-    $scope.$apply();
+    $scope.dreamEncouraged = false;
+    //$scope.$apply();
   };
 
   $scope.encourageDream = function() {
     console.log($scope.visibleDream);
     $scope.visibleDream.encouragements += 1;
-  }
+    $scope.dreamEncouraged = true;
+  };
 
   $scope.sendMessage = function() {
-    //$scope.visibleDream
+    $('#messageModal').modal('show');
+  };
+
+  $scope.sendFinalized = function() {
+    console.log($scope.emailContent);
   }
 
   var refDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/dreams");
@@ -34,7 +40,7 @@ browse.controller('BrowseC', function($scope, $state, $rootScope, $firebase, mod
         $scope.browseDreams.push(dream);
       }
     });
-    $scope.showDream();
+    $scope.$apply($scope.showDream());
   });
 
   $scope.modalDream = modal.showModal;

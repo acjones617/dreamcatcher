@@ -14,14 +14,18 @@ input {
 }
 
 .auth-box {
-  background-color: #FAFAFA;
+  background-color: #FFD2A5;
   width: 700px;
   height: auto;
   margin: 20px auto;
-  padding: 30px;
+  padding: 20px;
   border: solid black 3px;
   border-radius: 10px;
   font-size: 150%;
+}
+
+.auth-box > input {
+  font-size: 20px;
 }
 
 .toggle {
@@ -122,12 +126,27 @@ input {
   position: absolute;
 }
 
+.previous-dream:hover {
+  box-shadow: 0 0 10px black;
+}
+
+.dream-to-be:hover {
+  box-shadow: 0 0 10px black;
+}
+
+
 .three-backgrounds {
   margin-top: 10px;
 }
 
 .three-backgrounds > div {
   border-radius: 10px;
+  cursor: pointer; 
+  cursor: hand;
+}
+
+.three-backgrounds > div:hover {
+  box-shadow: 0 0 10px black;
 }
 
 .background-option-one {
@@ -145,6 +164,13 @@ input {
 .fontoption {
   text-align: center;
   padding: 7px;
+  cursor: pointer; 
+  cursor: hand;
+  border-radius: 10px;
+}
+
+.fontoption:hover {
+  background-color: #FFE1C1;
 }
 
 .font-option-one {
@@ -161,7 +187,6 @@ input {
 
 .selected {
   border: 5px solid black;
-  border-radius: 10px;
 }
 
 .new-dream-form {
@@ -187,20 +212,62 @@ input {
   margin-bottom: 100px;
 }
 
-.browse-button {
+.browse-button, .message-footer-button {
   text-align: center;
-  margin: 10px 5px 100px;
   background-color: #FFF6EC;
   border: 3px solid black;
   font-size: 150%;
   border-radius: 10px;
 }
 
+.message-footer-button {
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px
+  margin-right: 10px;
+}
+
+.browse-button {
+  margin: 10px 5px 100px;
+}
+
+.modal, .modal-dialog, .modal-content {
+  border-radius: 20px;
+}
+
 .modal-body {
+  border-radius: 20px;
   background-color: #FFF6EC;
 }
 
 .modal-dream {
   height: 500px;
   font-size: 400%;
+}
+
+#emailModal {
+  font-size: 150%;
+}
+
+.browse-footer:hover {
+  background-color: #FFE1C1
+}
+
+#infinity {
+  width: 100%;
+  height: 50px;
+}
+
+.invalidLogin {
+  color: red;
+  font-size: 80%;
+  margin-bottom: 5px;
+}
+
+.title {
+  text-align:center;
+}
+
+.green {
+  background-color: green;
 }

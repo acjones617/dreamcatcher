@@ -1,10 +1,30 @@
 <div ng-controller="BrowseC">
+
+  <div class="modal fade" id="messageModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h2 class="modal-title">Send a Message</h4>
+      </div>
+      <div class="modal-body">
+        <textarea name="email" id="emailModal" rows="5" cols="40" ng-model="emailContent" placeholder="Write your message here"></textarea>
+      </div>
+      <div class="modal-footer message-footer">
+        <button type="button" class="btn message-footer-button" data-dismiss="modal">Close</button>
+        <button type="button" class="btn message-footer-button" ng-click="sendFinalized()" data-dismiss="modal">Send message</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
   <div class="col-xs-offset-3 col-xs-6 dream-to-be" ng-class="[visibleDream.background, visibleDream.font]" ng-click="modalDream(visibleDream)">
     <p>{{ visibleDream.text }}</p>
   </div>
   <div class="col-xs-offset-4 col-xs-6">
-    <button class="btn browse-button" ng-click="encourageDream()"> Encourage +1 </button>
-    <button class="btn browse-button" ng-click="showDream()"> next </button>
-    <button class="btn browse-button" ng-click="sendMessage()"> Send Message </button>
+    <button class="btn browse-button green" ng-show="dreamEncouraged"> -   - +1! -   - </button>
+    <button class="btn browse-button browse-footer" ng-click="encourageDream()" ng-hide="dreamEncouraged"> Encourage +1 </button>
+    <button class="btn browse-button browse-footer" ng-click="showDream()"> next </button>
+    <button class="btn browse-button browse-footer" ng-click="sendMessage()"> Send Message </button>
   </div>
 </div>

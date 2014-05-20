@@ -56,6 +56,17 @@ home.controller('HomeC', function($scope, $state, $rootScope, $firebase, modal) 
 
   var refDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/dreams");
 
+  $scope.modal = function() {
+    var dream = {
+      username: $rootScope.user.username,
+      text: $scope.dream.text,
+      font: $scope.font.style,
+      background: $scope.bg.image,
+      encouragements: 0
+      };
+    modal.showModal(dream);
+  }
+
   $scope.submit = function() {
     var personalDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/personal/"+$rootScope.user.username);
     console.log('new dream', $scope.dream.text);
@@ -75,8 +86,4 @@ home.controller('HomeC', function($scope, $state, $rootScope, $firebase, modal) 
     modal.showModal(dream);
   };
 });
-
-// home.controller('HomeC', function($scope, $firebase, $state) {
-//   $scope.user = 'ANDREW';
-// });
 

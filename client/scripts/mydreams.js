@@ -10,7 +10,7 @@ mydreams.controller('DreamsC', function($scope, $state, $rootScope, $firebase, m
   // $scope.personalDreams = $scope.personalDreams || [];
   $scope.personalDreams = [];
 
-  var refDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/personal/"+$scope.username);
+  var refDreams = new Firebase("https://blazing-fire-3752.firebaseIO.com/personal/"+$rootScope.user.username);
   refDreams.on('value', function(snapshot) {
     var allDreams = snapshot.val();
     _.each(snapshot.val(), function(dream) {
