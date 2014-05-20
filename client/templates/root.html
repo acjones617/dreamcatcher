@@ -1,5 +1,5 @@
 
-<div ng-controller="RootC" class="container">
+<div ng-controller="RootC" class="container" id="main">
 <!-- HEADER -->
   <nav class="navbar navbar-default navbar-fixed-top container" role="navigation">
     <div class="navbar-header">
@@ -7,7 +7,7 @@
       
       <li class="icon-bar"><a ng-click="runInfinity()" ui-sref="root.home">Home</a></li>
       <li class="icon-bar"><a ng-click="runInfinity()" ui-sref='root.mydreams'>My Dreams</a></li>
-      <li class="icon-bar"><a ng-click="runInfinity()" ui-sref='root.inspirations'>Inspirations</a></li>
+      <li class="icon-bar"><a ng-click="runInfinity()" ui-sref='root.inspirations'>Inspiration</a></li>
       <li class="icon-bar"><a ng-click="runInfinity()" ui-sref='root.browse'>Browse</a></li>
       <li class="icon-bar"><a ng-click="runInfinity()" ui-sref='root.settings'>Settings</a></li>
       <li class="last-icon" ng-controller="LogoutC"><a ng-click="logout()">Logout</a></li>
@@ -15,6 +15,7 @@
   
     </div>
   </nav>
+
   <div ui-view></div>
 <!-- FOOTER -->
 <div id="footer" class="navbar navbar-fixed-bottom container">
