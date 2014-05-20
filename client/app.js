@@ -126,6 +126,7 @@ app.controller('AuthC', function($scope, $firebase, $rootScope, myAuthService, $
     $scope.signup.username = $scope.signup.email.split('@')[0];
     $rootScope.user = $scope.signup.username;
     myAuthService.auth.createUser($scope.signup.email, $scope.signup.password, function(error, user) {
+      console.log('creating user');
       if (!error) {
         console.log('User Id: ' + user.uid + ', Email: ' + user.email);
         refUsers.push({
@@ -141,6 +142,8 @@ app.controller('AuthC', function($scope, $firebase, $rootScope, myAuthService, $
           email: $scope.signup.email,
           password: $scope.signup.password
         });
+      } else {
+        console.log(error);
       }
 
     });
