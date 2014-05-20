@@ -66,27 +66,20 @@ home.controller('HomeC', function($scope, $state, $rootScope, $firebase) {
 
   $scope.submit = function() {
     console.log('new dream');
-    console.log({
-      username: $scope.username || 'test',
-      text: $scope.dream.text,
-      font: $scope.font.style || 'griffy',
-      background: $scope.bg.image || 'floral',
-      createdAt: new Date(),
-      encouragements: 0
-      });
+    var date = new Date().getTime();
     refDreams.push({
       username: $scope.username || 'test',
       text: $scope.dream.text,
       font: $scope.font.style || 'griffy',
       background: $scope.bg.image || 'floral',
-      createdAt: new Date(),
+      createdAt: date,
       encouragements: 0
       });
     personalDreams.push({
       text: $scope.dream.text,
       font: $scope.font.style || 'griffy',
       background: $scope.bg.image || 'floral',
-      createdAt: new Date(),
+      createdAt: date,
       encouragements: 0
     })
     delete $scope.dream.text;
