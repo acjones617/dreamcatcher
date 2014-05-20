@@ -5,12 +5,12 @@
     <div class="navbar-header">
     <ul class="nav navbar-nav">
       
-      <li class="icon-bar"><a ng-click="runInfinity()" ui-sref="root.home">Home</a></li>
-      <li class="icon-bar"><a ng-click="runInfinity()" ui-sref='root.mydreams'>My Dreams</a></li>
-      <li class="icon-bar"><a ng-click="runInfinity()" ui-sref='root.inspirations'>Inspiration</a></li>
-      <li class="icon-bar"><a ng-click="runInfinity()" ui-sref='root.browse'>Browse</a></li>
-      <li class="icon-bar"><a ng-click="runInfinity()" ui-sref='root.settings'>Settings</a></li>
-      <li class="last-icon" ng-controller="LogoutC"><a ng-click="logout()">Logout</a></li>
+      <li class="icon-bar" ng-class="{iconBarSelected: bar0}"><a ng-click="runInfinity(0)" ui-sref="root.home">Home</a></li>
+      <li class="icon-bar" ng-class="{iconBarSelected: bar1}"><a ng-click="runInfinity(1)" ui-sref='root.mydreams'>My Dreams</a></li>
+      <li class="icon-bar" ng-class="{iconBarSelected: bar2}"><a ng-click="runInfinity(2)" ui-sref='root.inspirations'>Inspiration</a></li>
+      <li class="icon-bar" ng-class="{iconBarSelected: bar3}"><a ng-click="runInfinity(3)" ui-sref='root.browse'>Browse</a></li>
+      <!-- <li class="icon-bar"><a ng-click="runInfinity()" ui-sref='root.settings'>Settings</a></li> -->
+      <li class="icon-bar"><a ng-click="logout()" ui-sref='authorization'>Logout</a></li>
     </ul>
   
     </div>
