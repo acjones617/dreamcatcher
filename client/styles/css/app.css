@@ -28,6 +28,10 @@ input {
   font-size: 20px;
 }
 
+input, textarea {
+  font-family: "Book Antiqua", Palatino, "Palatino Linotype", Georgia, serif;
+}
+
 .toggle {
   margin-top: 20px;
 }
@@ -53,8 +57,9 @@ input {
   font-weight: bold;
   padding: 7px;
   margin: 8px;
-  background-color: #A7A377;
+  background-color: #384035;
   border-radius: 10px;
+  color: #E0FFD2;
 }
 
 .icon-bar:hover {
@@ -97,6 +102,8 @@ input {
 
 .dream-to-be > p {
   padding-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .previous-dream {
@@ -115,6 +122,8 @@ input {
 
 .previous-dream > p {
   padding-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .previous-dream > span {
@@ -212,12 +221,23 @@ input {
   margin-bottom: 100px;
 }
 
-.browse-button, .message-footer-button {
+.browse-button, .message-footer-button{
   text-align: center;
   background-color: #E0FFD2;
   border: 3px solid black;
   font-size: 150%;
   border-radius: 10px;
+  cursor: pointer; 
+  cursor: hand;
+}
+
+.submit-dream {
+  text-align: center;
+  background-color: #E0FFD2;
+  border: 3px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  cursor: hand;
 }
 
 .message-footer-button {
@@ -249,7 +269,7 @@ input {
   font-size: 150%;
 }
 
-.browse-footer:hover {
+.browse-footer:hover, .submit-dream:hover {
   background-color: #C9E5BD;
 }
 
@@ -269,5 +289,5 @@ input {
 }
 
 .green {
-  background-color: green;
+  background-color: #707F69;
 }

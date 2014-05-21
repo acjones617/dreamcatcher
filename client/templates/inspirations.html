@@ -2,11 +2,14 @@
   <div class="col-xs-12 trending">
     Trending...
   </div> 
+  <div class='search-box'>Search by city:
+    <input type='text' name='Search' ng-model='search.city'>
+  </div>
   <div class="row">
-  <div ng-repeat="dream in popularDreams | orderBy:encouragements | limitTo:4">
+  <div ng-repeat="dream in popularDreams | filter:search.city | orderBy:encouragements | limitTo:4">
     <div class="col-xs-offset-2 col-xs-3 previous-dream {{ dream.font }} {{ dream.background }}" ng-click="modalDream(dream)">
       <p>{{ dream.text }}</p>
-      <!-- <p class="encourage"> Encouragements: {{ dream.encouragements }}</p> -->
+      <span class="encourage"> City: {{ dream.city }} </span>
     </div>
   </div>
   </div>

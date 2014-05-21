@@ -76,6 +76,7 @@ home.controller('HomeC', function($scope, $state, $rootScope, $firebase, modal) 
       text: $scope.dream.text,
       font: $scope.font.style,
       background: $scope.bg.image,
+      city: 'San Diego',
       createdAt: date,
       encouragements: 0
       };
