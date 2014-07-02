@@ -10,7 +10,7 @@ with a message, offering to help.
 
 ### Made With...
 
-Dreamcatcher was developed as largely an Angular app with a Firebase backend during the prototyping stage.
+Dreamcatcher was developed as an Angular app with a Firebase backend during the prototyping stage.
 If I continue to build out this idea, the next step would be to build out the express.js API with either
 a MongoDB or a SQL database.
 
